@@ -10,7 +10,7 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data
 def load_data():
-    path = "ipc.csv"
+    path = "ips.csv"
     data = pd.read_csv(
         path,
         names=["Lat", "Lon", "Number", "Census Tract #"],
