@@ -1,5 +1,5 @@
 
-# Streamlined version of the Streamlit app code with corrected tooltips
+# Streamlined version of the Streamlit app code with corrected column names and tooltips
 
 import pandas as pd
 import pydeck as pdk
@@ -8,21 +8,21 @@ import streamlit as st
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":chart_with_upwards_trend:")
 
-# Function to load data
+# Function to load data and correct the column names
 def load_data():
     path = "ips.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
         skiprows=1  # Skipping the first row assuming it's the header
     )
-    # Renaming the column with special characters to ensure compatibility with Pydeck
-    data = data.rename(columns={'Census Tract #': 'census_tract'})
+    # Renaming the columns to match the expected format for Pydeck
+    data = data.rename(columns=lambda x: x.strip().replace(' ', '_').replace('#', 'num').capitalize())
     return data
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Number:</b> {Number}",
+        "html": "<b>Census Tract #:</b> {Census_tract_num}<br><b>Number:</b> {Number}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
