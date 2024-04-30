@@ -1,6 +1,7 @@
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
+import numpy as np
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":chart_with_upwards_trend:")
@@ -13,6 +14,7 @@ def load_data():
         skiprows=1,  # Skipping the first row assuming it's the header
         names=["lat", "lon", "num", "tract"],
     )
+    data['num'] = np.log(data['num'] + 1)  # Using logarithmic scaling to reduce the range
     return data
 
 # Function to display the map with corrected tooltip
