@@ -30,7 +30,7 @@ def render_map(data):
         data,
         get_position="[lon, lat]",
         get_elevation="GDP",
-        elevation_scale=100,  # Adjusted for visibility
+        elevation_scale=4,  # Adjusted for visibility
         radius=2000,  # Visible radius
         extruded=True,
         pickable=True,
@@ -49,7 +49,7 @@ def render_map(data):
     st.pydeck_chart(pdk.Deck(
         layers=[layer],
         initial_view_state=view_state,
-        map_style='mapbox://styles/mapbox/light-v9'
+        
     ))
 
 st.title("Interactive GDP Visualization")
