@@ -1,5 +1,5 @@
 
-# Streamlined version of the Streamlit app code
+# Streamlined version of the Streamlit app code with corrected tooltips
 
 import pandas as pd
 import pydeck as pdk
@@ -10,21 +10,17 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data
 def load_data():
-    path = "ips.csv"
+    path = "ips.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
-        names=["Lat", "Lon", "Number", "Census Tract #"],
-        skiprows=1
+        skiprows=1  # Skipping the first row assuming it's the header
     )
+    # Renaming the column with special characters to ensure compatibility with Pydeck
+    data = data.rename(columns={'Census Tract #': 'census_tract'})
     return data
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
-    # Since tooltips might not accept columns with spaces or special characters directly,
-    # we need to create a copy of the column with a name that's valid as a JavaScript identifier.
-    data_copy = data.copy()
-    data_copy['census_tract'] = data_copy['Census Tract #']
-    
     tooltip = {
         "html": "<b>Census Tract #:</b> {census_tract}<br><b>Number:</b> {Number}",
         "style": {
@@ -40,14 +36,13 @@ def map(data, lat, lon, zoom):
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
-                    data=data_copy,
+                    data=data,
                     get_position=["Lon", "Lat"],
                     get_elevation="Number",
-                    elevation_scale=2,
-                    elevation_range=[0, 200000],
+                    elevation_scale=4,
+                    elevation_range=[0, 1000],
                     pickable=True,
                     extruded=True,
-                    coverage=1,
                 ),
             ],
             tooltip=tooltip
