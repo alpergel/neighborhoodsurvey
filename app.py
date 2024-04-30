@@ -15,7 +15,6 @@ def load_data():
         names=["lat", "lon", "num", "tract"],
     )
     
-    data['num'] = np.log(data['num'] + 1)  # Using logarithmic scaling to reduce the range
     replicated_data = data.loc[data.index.repeat(data['num'])].copy()
     replicated_data.reset_index(drop=True, inplace=True)
 
