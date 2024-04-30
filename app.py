@@ -1,81 +1,61 @@
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
-import numpy as np
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":chart_with_upwards_trend:")
+st.set_page_config(layout="wide", page_title="GDP Visualization", page_icon=":chart_with_upwards_trend:")
 
-# Function to load data and correct the column names
 def load_data():
-    path = "ipc2.csv"  # The path will be adjusted to the actual file location when deploying
-    data = pd.read_csv(
-        path,
-        skiprows=1,  # Skipping the first row assuming it's the header
-        names=["lat", "lon"],
-    )
-    
-    #replicated_data = data.loc[data.index.repeat(data['num'])].copy()
-    #replicated_data.reset_index(drop=True, inplace=True)
-
-    # Optionally, you may want to drop or modify the 'num' column since it has served its purpose
-    #replicated_data.drop('num', axis=1, inplace=True)
-    #replicated_data.drop('tract', axis=1, inplace=True)
-
+    # Simulate loading simple data
+    # Assume data format: latitude, longitude, GDP, community_name
+    data = pd.DataFrame({
+        'lat': [34.05, 36.12, 37.77, 34.00],
+        'lon': [-118.24, -115.17, -122.42, -118.25],
+        'GDP': [10000, 20000, 30000, 40000],  # Simulated GDP values
+        'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
+    })
     return data
 
-# Function to display the map with corrected tooltip
-def map(data, lat, lon, zoom):
+def render_map(data):
+    # Define tooltip for displaying data on hover
+    tooltip = {
+        "html": "<b>Community:</b> {community_name}<br><b>GDP:</b> {GDP}",
+        "style": {
+            "backgroundColor": "steelblue",
+            "color": "white"
+        }
+    }
+
+    # Create a HexagonLayer
     layer = pdk.Layer(
-        'HexagonLayer',
+        "HexagonLayer",
         data,
         get_position='[lon, lat]',
-        auto_highlight=True,
-        get_elevation="num",
-        elevation_scale=10,
-        pickable=True,
-        elevation_range=[0, 500],
+        get_elevation='GDP',
+        elevation_scale=100,  # Adjust scale to visually represent GDP appropriately
+        radius=5000,  # Adjust radius to fit your geographic needs
         extruded=True,
-        coverage=1,
-        radius=250,  # Adjusted for smaller hexagons; previously not defined, so it was using the default size
-    )
-    
-    st.write(
-        pdk.Deck(
-            map_style="mapbox://styles/mapbox/dark-v9",
-            initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[layer],
-        )
+        pickable=True,
+        elevation_range=[0, 30000],  # Adjust based on your max GDP
+        tooltip=tooltip
     )
 
-# Main app execution part
-data = load_data()
-midpoint = (data['lat'].mean(), data['lon'].mean())
-
-st.title("Interactive Data Visualization")
-chart_data = pd.DataFrame(
-   np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-   columns=['lat', 'lon'])
-
-st.pydeck_chart(pdk.Deck(
-    map_style=None,
-    initial_view_state=pdk.ViewState(
+    # Define the initial view state
+    view_state = pdk.ViewState(
         latitude=data['lat'].mean(),
         longitude=data['lon'].mean(),
-        zoom=11,
-        pitch=50,
-    ),
-    layers=[
-        pdk.Layer(
-           'HexagonLayer',
-           data=data,
-           get_position='[lon, lat]',
-           radius=200,
-           elevation_scale=4,
-           elevation_range=[0, 1000],
-           pickable=True,
-           extruded=True,
-        ),
-    ],
-))
-#map(data, midpoint[0], midpoint[1], 11)
+        zoom=5,
+        pitch=50
+    )
+
+    # Create the deck.gl map
+    st.pydeck_chart(pdk.Deck(
+        map_style='mapbox://styles/mapbox/light-v9',
+        initial_view_state=view_state,
+        layers=[layer]
+    ))
+
+# Main
+data = load_data()
+st.title("Interactive GDP Visualization")
+render_map(data)
