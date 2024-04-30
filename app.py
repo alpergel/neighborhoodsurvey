@@ -29,7 +29,7 @@ def render_map(data):
     color_scale = [[x / max_gdp * 255, (1 - x / max_gdp) * 255, 100] for x in data['GDP']]
     
     layer = pdk.Layer(
-        "ColumnLayer",
+        "HexagonLayer",
         data,
         get_position="[lon, lat]",
         get_elevation="GDP",
