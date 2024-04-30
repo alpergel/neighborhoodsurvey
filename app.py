@@ -24,12 +24,16 @@ def render_map(data):
             "color": "white"
         }
     }
-
+    
+    max_gdp = data['GDP'].max()
+    color_scale = [[x / max_gdp * 255, (1 - x / max_gdp) * 255, 100] for x in data['GDP']]
+    
     layer = pdk.Layer(
         "ColumnLayer",
         data,
         get_position="[lon, lat]",
         get_elevation="GDP",
+        get_color=color_scale,
         elevation_scale=4,  # Adjusted for visibility
         radius=2000,  # Visible radius
         extruded=True,
