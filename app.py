@@ -9,9 +9,9 @@ def load_data():
     # Simulate loading simple data
     # Assume data format: latitude, longitude, GDP, community_name
     data = pd.DataFrame({
-        'lat': [33, 36.12, 37.77, 34.00],  # Check these coordinates
-        'lon': [-117, -115.17, -122.42, -118.25],  # Check these coordinates
-        'GDP': [10000, 20000, 30000, 40000],  # Simulated GDP values
+        'lat': [33.36607, 33.370236, 33.369961, 33.354334],  # Check these coordinates
+        'lon': [-111.96315, -111.971805, -111.953024, -111.95699],  # Check these coordinates
+        'GDP': [26814, 55927, 40759, 37540],  # Simulated GDP values
         'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
     })
     return data
