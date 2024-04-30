@@ -36,7 +36,7 @@ def render_map(data):
         radius=50,  # Adjust radius to fit your geographic needs
         extruded=True,
         pickable=True,
-        elevation_range=[0, 30000],  # Adjust based on your max GDP
+        elevation_range=[0, 500],  # Adjust based on your max GDP
         tooltip=tooltip
     )
 
