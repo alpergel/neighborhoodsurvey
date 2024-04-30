@@ -1,6 +1,3 @@
-
-# Streamlined version of the Streamlit app code with corrected column names and tooltips
-
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
@@ -16,14 +13,12 @@ def load_data():
         skiprows=1,  # Skipping the first row assuming it's the header
         names=["lat", "lon", "num", "tract"],
     )
-    # Renaming the columns to match the expected format for Pydeck
-   
     return data
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {Census_tract_num}<br><b>Number:</b> {Number}",
+        "html": "<b>Census Tract #:</b> {tract}<br><b>Number:</b> {num}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
@@ -39,19 +34,15 @@ def map(data, lat, lon, zoom):
         pickable=True,
         elevation_range=[0, 3000],
         extruded=True,
-        coverage=1)
+        coverage=1,
+        tooltip=tooltip
+    )
     
     st.write(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[layer],
-            tooltip={
-                'html': '<b>Elevation Value:</b> {elevationValue}',
-                'style': {
-                    'color': 'white'
-                }
-            }
+            layers=[layer]
         )
     )
 
