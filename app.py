@@ -38,7 +38,7 @@ def render_map(data):
         radius=2000,  # Visible radius
         extruded=True,
         pickable=True,
-        tooltip=tooltip
+        
     )
 
     # Setup the initial view state for the map
@@ -51,8 +51,11 @@ def render_map(data):
 
     # Create the deck
     st.pydeck_chart(pdk.Deck(
+        map_style="mapbox://styles/mapbox/light-v9",
         layers=[layer],
         initial_view_state=view_state,
+        tooltip=tooltip,
+        
         
     ))
 
