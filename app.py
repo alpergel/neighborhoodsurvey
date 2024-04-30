@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data and correct the column names
 def load_data():
-    path = "ipc1.csv"  # The path will be adjusted to the actual file location when deploying
+    path = "ipc2.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
         skiprows=1,  # Skipping the first row assuming it's the header
