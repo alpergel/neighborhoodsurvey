@@ -29,24 +29,28 @@ def map(data, lat, lon, zoom):
             "color": "white"
         }
     }
+    layer = pdk.Layer(
+        'HexagonLayer',
+        data,
+        get_position='[lon, lat]',
+        auto_highlight=True,
+        elevation_scale=50,
+        pickable=True,
+        elevation_range=[0, 3000],
+        extruded=True,
+        coverage=1)
     
     st.write(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[
-                pdk.Layer(
-                    "HexagonLayer",
-                    data=data,
-                    get_position=["lon", "lat"],
-                    get_elevation="num",
-                    elevation_scale=2,
-                    elevation_range=[0, 1000],
-                    pickable=True,
-                    extruded=True,
-                ),
-            ],
-            tooltip=tooltip
+            layers=[layer],
+            tooltip={
+                'html': '<b>Elevation Value:</b> {elevationValue}',
+                'style': {
+                    'color': 'white'
+                }
+            }
         )
     )
 
