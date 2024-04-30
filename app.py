@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data and correct the column names
 def load_data():
-    path = "ipc2.csv"  # The path will be adjusted to the actual file location when deploying
+    path = "ipc1.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
         skiprows=1,  # Skipping the first row assuming it's the header
@@ -50,15 +50,18 @@ def map(data, lat, lon, zoom):
 
 # Main app execution part
 data = load_data()
-#midpoint = (data['lat'].mean(), data['lon'].mean())
+midpoint = (data['lat'].mean(), data['lon'].mean())
 
 st.title("Interactive Data Visualization")
+chart_data = pd.DataFrame(
+   np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+   columns=['lat', 'lon'])
 
 st.pydeck_chart(pdk.Deck(
     map_style=None,
     initial_view_state=pdk.ViewState(
-        latitude=data['lat'].mean(),
-        longitude=data['lon'].mean(),
+        latitude=midpoint[0],
+        longitude=midpoint[1],
         zoom=11,
         pitch=50,
     ),
