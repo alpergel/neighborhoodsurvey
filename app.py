@@ -60,8 +60,8 @@ chart_data = pd.DataFrame(
 st.pydeck_chart(pdk.Deck(
     map_style=None,
     initial_view_state=pdk.ViewState(
-        latitude=midpoint[0],
-        longitude=midpoint[1],
+        latitude=data['lat'].mean(),
+        longitude=data['lon'].mean(),
         zoom=11,
         pitch=50,
     ),
