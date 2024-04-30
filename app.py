@@ -12,7 +12,7 @@ def load_data():
     data = pd.read_csv(
         path,
         skiprows=1,  # Skipping the first row assuming it's the header
-        names=["lat", "lon","num","tract"],
+        names=["lat", "lon"],
     )
     
     #replicated_data = data.loc[data.index.repeat(data['num'])].copy()
