@@ -34,7 +34,7 @@ def render_map(data):
         get_position="[lon, lat]",
         get_elevation="GDP",
         auto_highlight=True,
-        get_fill_color="[GDP / max(GDP) * 255, (1 - GDP / max(GDP)) * 255, 100]",  # Coloring based on GDP
+        get_fill_color=["GDP / max(GDP) * 255", "(1 - GDP / max(GDP)) * 255", 100],  # Coloring based on GDP
         elevation_scale=4,  # Adjusted for visibility
         radius=2000,  # Visible radius
         extruded=True,
