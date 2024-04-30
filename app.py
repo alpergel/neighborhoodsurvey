@@ -8,21 +8,21 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data and correct the column names
 def load_data():
-    path = "ipc1.csv"  # The path will be adjusted to the actual file location when deploying
+    path = "ipc2.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
         skiprows=1,  # Skipping the first row assuming it's the header
-        names=["lat", "lon", "num", "tract"],
+        names=["lat", "lon"],
     )
     
-    replicated_data = data.loc[data.index.repeat(data['num'])].copy()
-    replicated_data.reset_index(drop=True, inplace=True)
+    #replicated_data = data.loc[data.index.repeat(data['num'])].copy()
+    #replicated_data.reset_index(drop=True, inplace=True)
 
     # Optionally, you may want to drop or modify the 'num' column since it has served its purpose
-    replicated_data.drop('num', axis=1, inplace=True)
-    replicated_data.drop('tract', axis=1, inplace=True)
+    #replicated_data.drop('num', axis=1, inplace=True)
+    #replicated_data.drop('tract', axis=1, inplace=True)
 
-    return replicated_data
+    return data
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
