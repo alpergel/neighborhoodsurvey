@@ -19,6 +19,7 @@ def load_data():
 
     # Optionally, you may want to drop or modify the 'num' column since it has served its purpose
     replicated_data.drop('num', axis=1, inplace=True)
+    replicated_data.drop('tract', axis=1, inplace=True)
 
     return replicated_data
 
