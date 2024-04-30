@@ -32,9 +32,9 @@ def map(data, lat, lon, zoom):
         get_position='[lon, lat]',
         auto_highlight=True,
         get_elevation="num",
-        elevation_scale=100,
+        elevation_scale=50,
         pickable=True,
-        elevation_range=[0, 30000],
+        elevation_range=[0, 5000],
         extruded=True,
         coverage=1,
         radius=250,  # Adjusted for smaller hexagons; previously not defined, so it was using the default size
