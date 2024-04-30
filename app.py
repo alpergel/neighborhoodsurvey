@@ -32,8 +32,8 @@ def render_map(data):
         data,
         get_position='[lon, lat]',
         get_elevation='GDP',
-        elevation_scale=100,  # Adjust scale to visually represent GDP appropriately
-        radius=5000,  # Adjust radius to fit your geographic needs
+        elevation_scale=500,  # Adjust scale to visually represent GDP appropriately
+        radius=10,  # Adjust radius to fit your geographic needs
         extruded=True,
         pickable=True,
         elevation_range=[0, 30000],  # Adjust based on your max GDP
