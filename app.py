@@ -14,8 +14,13 @@ def load_data():
         skiprows=1,  # Skipping the first row assuming it's the header
         names=["lat", "lon", "num", "tract"],
     )
-    data['num'] = np.log(data['num'] + 1)  # Using logarithmic scaling to reduce the range
-    return data
+    replicated_data = data.loc[data.index.repeat(data['num'])].copy()
+    replicated_data.reset_index(drop=True, inplace=True)
+
+    # Optionally, you may want to drop or modify the 'num' column since it has served its purpose
+    replicated_data.drop('num', axis=1, inplace=True)
+
+    return replicated_data
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
