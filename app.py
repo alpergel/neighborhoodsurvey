@@ -24,13 +24,6 @@ def load_data():
 
 # Function to display the map with corrected tooltip
 def map(data, lat, lon, zoom):
-    tooltip = {
-        "html": "<b>Census Tract #:</b> {tract}<br><b>Number:</b> {num}",
-        "style": {
-            "backgroundColor": "steelblue",
-            "color": "white"
-        }
-    }
     layer = pdk.Layer(
         'HexagonLayer',
         data,
@@ -47,10 +40,9 @@ def map(data, lat, lon, zoom):
     
     st.write(
         pdk.Deck(
-            map_style="mapbox://styles/mapbox/light-v9",
+            map_style="mapbox://styles/mapbox/dark-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
             layers=[layer],
-            tooltip=tooltip,
         )
     )
 
