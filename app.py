@@ -24,7 +24,6 @@ def map(data, lat, lon, zoom):
             "color": "white"
         }
     }
-    print(data)
     layer = pdk.Layer(
         'HexagonLayer',
         data,
@@ -36,6 +35,7 @@ def map(data, lat, lon, zoom):
         elevation_range=[0, 3000],
         extruded=True,
         coverage=1,
+        radius=250,  # Adjusted for smaller hexagons; previously not defined, so it was using the default size
         tooltip=tooltip
     )
     
@@ -43,14 +43,13 @@ def map(data, lat, lon, zoom):
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[layer],
-            tooltip=tooltip
+            layers=[layer]
         )
     )
 
 # Main app execution part
 data = load_data()
 midpoint = (data['lat'].mean(), data['lon'].mean())
-st.write("Data loaded and first few records are:", data.head())
+
 st.title("Interactive Data Visualization")
 map(data, midpoint[0], midpoint[1], 11)
