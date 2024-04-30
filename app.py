@@ -24,6 +24,7 @@ def map(data, lat, lon, zoom):
             "color": "white"
         }
     }
+    print(data)
     layer = pdk.Layer(
         'HexagonLayer',
         data,
@@ -50,6 +51,6 @@ def map(data, lat, lon, zoom):
 # Main app execution part
 data = load_data()
 midpoint = (data['lat'].mean(), data['lon'].mean())
-
+st.write("Data loaded and first few records are:", data.head())
 st.title("Interactive Data Visualization")
 map(data, midpoint[0], midpoint[1], 11)
