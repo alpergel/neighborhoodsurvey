@@ -1,5 +1,5 @@
 
-# Streamlined version of the Streamlit app code
+# Streamlined version of the Streamlit app code with fixed tooltips
 
 import pandas as pd
 import pydeck as pdk
@@ -10,21 +10,18 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data
 def load_data():
-    path = "ipc.csv"
+    path = "ips.csv"
     data = pd.read_csv(
         path,
         names=["Lat", "Lon", "Number", "Census Tract #"],
         skiprows=1
     )
+    # Renaming the column to ensure compatibility with tooltip in Pydeck
+    data = data.rename(columns={'Census Tract #': 'census_tract'})
     return data
 
-# Function to display the map with corrected tooltip
+# Function to display the map with fixed tooltip
 def map(data, lat, lon, zoom):
-    # Since tooltips might not accept columns with spaces or special characters directly,
-    # we need to create a copy of the column with a name that's valid as a JavaScript identifier.
-    data_copy = data.copy()
-    data_copy['census_tract'] = data_copy['Census Tract #']
-    
     tooltip = {
         "html": "<b>Census Tract #:</b> {census_tract}<br><b>Number:</b> {Number}",
         "style": {
@@ -40,7 +37,7 @@ def map(data, lat, lon, zoom):
             layers=[
                 pdk.Layer(
                     "HexagonLayer",
-                    data=data_copy,
+                    data=data,
                     get_position=["Lon", "Lat"],
                     get_elevation="Number",
                     elevation_scale=4,
@@ -60,4 +57,3 @@ midpoint = (data['Lat'].mean(), data['Lon'].mean())
 
 st.title("Interactive Data Visualization")
 map(data, midpoint[0], midpoint[1], 11)
-
