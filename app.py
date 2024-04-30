@@ -53,5 +53,4 @@ data = load_data()
 midpoint = (data['lat'].mean(), data['lon'].mean())
 
 st.title("Interactive Data Visualization")
-st.write(data.head())
 map(data, midpoint[0], midpoint[1], 11)
