@@ -52,7 +52,7 @@ def map(data, lat, lon, zoom):
 
 # Main app execution part
 data = load_data()
-midpoint = (data['Lat'].mean(), data['Lon'].mean())
+midpoint = (data['lat'].mean(), data['lon'].mean())
 
 st.title("Interactive Data Visualization")
 map(data, midpoint[0], midpoint[1], 11)
