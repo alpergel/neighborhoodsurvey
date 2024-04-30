@@ -42,7 +42,8 @@ def map(data, lat, lon, zoom):
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[layer]
+            layers=[layer],
+            tooltip=tooltip
         )
     )
 
