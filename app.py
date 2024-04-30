@@ -36,14 +36,14 @@ def map(data, lat, lon, zoom):
         extruded=True,
         coverage=1,
         radius=250,  # Adjusted for smaller hexagons; previously not defined, so it was using the default size
-        tooltip=tooltip
     )
     
     st.write(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={"latitude": lat, "longitude": lon, "zoom": zoom, "pitch": 50},
-            layers=[layer]
+            layers=[layer],
+            tooltip=tooltip,
         )
     )
 
