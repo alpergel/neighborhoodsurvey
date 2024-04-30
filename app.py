@@ -10,13 +10,14 @@ st.set_page_config(layout="wide", page_title="Data Visualization", page_icon=":c
 
 # Function to load data and correct the column names
 def load_data():
-    path = "ips.csv"  # The path will be adjusted to the actual file location when deploying
+    path = "ipc1.csv"  # The path will be adjusted to the actual file location when deploying
     data = pd.read_csv(
         path,
-        skiprows=1  # Skipping the first row assuming it's the header
+        skiprows=1,  # Skipping the first row assuming it's the header
+        names=["lat", "lon", "num", "tract"],
     )
     # Renaming the columns to match the expected format for Pydeck
-    data = data.rename(columns=lambda x: x.strip().replace(' ', '_').replace('#', 'num').capitalize())
+   
     return data
 
 # Function to display the map with corrected tooltip
