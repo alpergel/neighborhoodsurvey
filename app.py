@@ -34,6 +34,7 @@ def map(data, lat, lon, zoom):
         data,
         get_position='[lon, lat]',
         auto_highlight=True,
+        get_elevation="num",
         elevation_scale=50,
         pickable=True,
         elevation_range=[0, 3000],
