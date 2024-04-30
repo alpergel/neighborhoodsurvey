@@ -30,7 +30,7 @@ def map(data, lat, lon, zoom):
         get_position='[lon, lat]',
         auto_highlight=True,
         get_elevation="num",
-        elevation_scale=1000,
+        elevation_scale=100,
         pickable=True,
         elevation_range=[0, 75000],
         extruded=True,
