@@ -17,7 +17,6 @@ def load_data():
     return data
 
 def render_map(data):
-    # Define tooltip for displaying data on hover
     tooltip = {
         "html": "<b>Community:</b> {community_name}<br><b>GDP:</b> {GDP}",
         "style": {
@@ -26,21 +25,19 @@ def render_map(data):
         }
     }
 
-    # Create a HexagonLayer
     layer = pdk.Layer(
-        "HexagonLayer",
+        "ColumnLayer",
         data,
-        get_position='[lon, lat]',
-        get_elevation='GDP',
-        elevation_scale=50,  # Adjust scale to visually represent GDP appropriately
-        radius=50,  # Adjust radius to fit your geographic needs
+        get_position="[lon, lat]",
+        get_elevation="GDP",
+        elevation_scale=100,  # Adjusted for visibility
+        radius=2000,  # Visible radius
         extruded=True,
         pickable=True,
-        elevation_range=[0, 500],  # Adjust based on your max GDP
         tooltip=tooltip
     )
 
-    # Define the initial view state
+    # Setup the initial view state for the map
     view_state = pdk.ViewState(
         latitude=data['lat'].mean(),
         longitude=data['lon'].mean(),
@@ -48,14 +45,15 @@ def render_map(data):
         pitch=50
     )
 
-    # Create the deck.gl map
+    # Create the deck
     st.pydeck_chart(pdk.Deck(
-        map_style='mapbox://styles/mapbox/light-v9',
+        layers=[layer],
         initial_view_state=view_state,
-        layers=[layer]
+        map_style='mapbox://styles/mapbox/light-v9'
     ))
 
+st.title("Interactive GDP Visualization")
 # Main
 data = load_data()
-st.title("Interactive GDP Visualization")
+st.write(data.head())
 render_map(data)
