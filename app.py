@@ -38,9 +38,9 @@ def map(data, lat, lon, zoom):
                 pdk.Layer(
                     "HexagonLayer",
                     data=data,
-                    get_position=["Lon", "Lat"],
-                    get_elevation="Number",
-                    elevation_scale=4,
+                    get_position=["lon", "lat"],
+                    get_elevation="num",
+                    elevation_scale=2,
                     elevation_range=[0, 1000],
                     pickable=True,
                     extruded=True,
