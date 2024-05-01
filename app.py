@@ -24,7 +24,7 @@ def load_data():
     mobilityData = pd.DataFrame({
         'lat': [33.36607, 33.370236, 33.369961, 33.354334],
         'lon': [-111.96315, -111.971805, -111.953024, -111.95699],
-        'mob': [.02,.06,.09,.06],
+        'mob': [2,6,9,6],
         'census_tract': ['4013320002', '4013116738', '4013320007', '4013320001'],
     })
     eduData = pd.DataFrame({
@@ -134,7 +134,7 @@ def render_mob_map(data):
         get_elevation="ipc",
         auto_highlight=True,
         get_fill_color=[0, 100, 250 ],  
-        elevation_scale=0.05,  # Adjusted for visibility
+        elevation_scale=10,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
         pickable=True,
@@ -212,13 +212,15 @@ row1_1, row1_2, row1_3 = st.columns(3)
 with row1_1:
     st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
-    st.subheader("Census 2022")
+    st.subheader("Census 2022; Policy Map")
 with row1_2:
-    st.header("Upward Mobility of Hispanic/Latino Citizens")
+    st.header("Upward Economic Mobility")
     render_mob_map(mobData)
+    st.subheader("Census 2010; Policy Map")
 with row1_3:
     st.header("Local Income Per Capita Comparison")
     render_edu_map(eduData)
+    st.subheader("Census 2022; Policy Map")
 st.divider()
 st.header("Map Page Sources")
 
