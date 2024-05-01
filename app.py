@@ -131,7 +131,7 @@ def render_mob_map(data):
         "ColumnLayer",
         data,
         get_position="[lon, lat]",
-        get_elevation="ipc",
+        get_elevation="mob",
         auto_highlight=True,
         get_fill_color=[0, 100, 250 ],  
         elevation_scale=10,  # Adjusted for visibility
@@ -171,7 +171,7 @@ def render_edu_map(data):
         "ColumnLayer",
         data,
         get_position="[lon, lat]",
-        get_elevation="ipc",
+        get_elevation="edu",
         auto_highlight=True,
         get_fill_color=[210, 0, 100 ],  
         elevation_scale=0.05,  # Adjusted for visibility
