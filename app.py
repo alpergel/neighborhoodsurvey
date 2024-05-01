@@ -34,7 +34,7 @@ def render_migration_map(data):
     arc_layer = pdk.Layer(
         "ArcLayer",
         data=data,
-        get_width="S000 * 4",
+        get_width="S000 * 20",
         get_source_position=["lng_h", "lat_h"],
         get_target_position=["lng_w", "lat_w"],
         get_tilt=15,
