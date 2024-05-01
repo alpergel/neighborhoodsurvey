@@ -174,7 +174,7 @@ def render_edu_map(data):
         get_elevation="edu",
         auto_highlight=True,
         get_fill_color=[210, 0, 100 ],  
-        elevation_scale=1,  # Adjusted for visibility
+        elevation_scale=20,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
         pickable=True,
