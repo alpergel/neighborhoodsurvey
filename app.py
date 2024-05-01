@@ -32,7 +32,7 @@ def render_map(data):
         get_elevation="ipc",
         auto_highlight=True,
         get_fill_color=[255,0, 0],  
-        elevation_scale=0.5,  # Adjusted for visibility
+        elevation_scale=0.25,  # Adjusted for visibility
         radius=50,  # Visible radius
         extruded=True,
         pickable=True,
@@ -60,5 +60,4 @@ def render_map(data):
 st.title("Interactive GDP Visualization")
 # Main
 data = load_data()
-st.write(data.head())
 render_map(data)
