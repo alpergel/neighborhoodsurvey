@@ -15,11 +15,11 @@ def load_data():
         'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
     })
     arcData = pd.DataFrame({
-        'lng_h': [-109.9304, -109.9304, -109.9304, -109.9304],
-        'lng_w': [-111.96315, -110.911789, -116.375015, -116.3903],
-        "lat_h": [27.4828, 27.4828, 27.4828, 27.4828],
-        "lat_w": [33.36607, 32.253460,33.255871, 33.8200],
-        "com": ["Guadalupe, AZ","Tuscon, AZ","Thousand Palms, CA", "Borrego Springs, CA"]
+        'lng_h': [-109.9304, -109.9304, -109.9304, -109.9304, -109.9304],
+        'lng_w': [-111.96315, -110.911789, -116.375015, -116.3903, -101.855072],
+        "lat_h": [27.4828, 27.4828, 27.4828, 27.4828, 27.4828],
+        "lat_w": [33.36607, 32.253460,33.255871, 33.8200, 33.576698],
+        "com": ["Guadalupe, AZ","Tuscon, AZ","Thousand Palms, CA", "Borrego Springs, CA, Lubbock, TX"]
     })
     return ipcData, arcData
 def render_migration_map(data):
