@@ -15,10 +15,10 @@ def load_data():
         'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
     })
     arcData = pd.DataFrame({
-        'lng_h': [-109.9304, -109.9304],
-        'lng_w': [-111.96315, -110.911789],
-        "lat_h": [27.4828, 27.4828],
-        "lat_w": [33.36607, 32.253460],
+        'lng_h': [-109.9304, -109.9304, -109.9304, -109.9304],
+        'lng_w': [-111.96315, -110.911789, -116.375015, -116.3903],
+        "lat_h": [27.4828, 27.4828, 27.4828, 27.4828],
+        "lat_w": [33.36607, 32.253460,33.255871, 33.8200],
     })
     return ipcData, arcData
 def render_migration_map(data):
@@ -29,8 +29,8 @@ def render_migration_map(data):
             "color": "white"
         }
     }
-    GREEN_RGB = [0, 255, 0, 40]
-    RED_RGB = [240, 100, 0, 40]
+    BLUE_RGB = [0, 0, 255, 40]
+    RED_RGB = [240, 50, 0, 40]
     arc_layer = pdk.Layer(
         "ArcLayer",
         data=data,
@@ -39,8 +39,8 @@ def render_migration_map(data):
         get_source_position=["lng_h", "lat_h"],
         get_target_position=["lng_w", "lat_w"],
         get_tilt=15,
-        get_source_color=RED_RGB,
-        get_target_color=GREEN_RGB,
+        get_source_color=BLUE_RGB,
+        get_target_color=RED_RGB,
         pickable=True,
         auto_highlight=True,
     ) 
