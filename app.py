@@ -19,11 +19,12 @@ def load_data():
         'lng_w': [-111.96315, -110.911789, -116.375015, -116.3903],
         "lat_h": [27.4828, 27.4828, 27.4828, 27.4828],
         "lat_w": [33.36607, 32.253460,33.255871, 33.8200],
+        "com": ["Guadalupe, AZ","Tuscon, AZ","Thousand Palms, CA", "Borrego Springs, CA"]
     })
     return ipcData, arcData
 def render_migration_map(data):
     tooltip = {
-        "html": "<b>Location:</b> {community_name}<br><b>",
+        "html": "<b>Yaqui Migration To:</b> {com}<br><b>",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
