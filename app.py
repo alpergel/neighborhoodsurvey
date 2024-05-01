@@ -160,7 +160,7 @@ def render_mob_map(data):
     ))
 def render_edu_map(data):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Percent of Hispanic/Latino people with at least a GED:</b> {edu}",
+        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Percent of people with >= GED:</b> {edu}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
