@@ -118,14 +118,14 @@ st.header("Regional Socioeconomic Data")
 st.subheader("The rapid economic development of Phoenix around the Guadalupe community, and stagnant economical mobility within the community has led to a loss of quality of life for the community members, and desperate housing situations. Below are demographics of Guadalupe and its surrounding communities as comparison.")
 row1_1, row1_2, row1_3 = st.columns(3)
 with row1_1:
-    st.title("Local Income Per Capita Comparison")
+    st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
-    st.caption("Census 2020")
+    st.subheader("Census 2020")
 with row1_2:
-    st.title("Local Income Per Capita Comparison")
+    st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
 with row1_3:
-    st.title("Local Income Per Capita Comparison")
+    st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
 
 
