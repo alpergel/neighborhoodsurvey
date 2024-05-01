@@ -30,7 +30,7 @@ def load_data():
     eduData = pd.DataFrame({
         'lat': [33.36607, 33.370236, 33.369961, 33.354334],
         'lon': [-111.96315, -111.971805, -111.953024, -111.95699],
-        'edu': [0.61,0.82,1.0,1.0],
+        'edu': [61,82,100,100],
         'census_tract': ['4013320002', '4013116738', '4013320007', '4013320001'],
     })
     return ipcData, arcData, mobilityData, eduData
@@ -134,7 +134,7 @@ def render_mob_map(data):
         get_elevation="mob",
         auto_highlight=True,
         get_fill_color=[0, 100, 250 ],  
-        elevation_scale=10,  # Adjusted for visibility
+        elevation_scale=100,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
         pickable=True,
@@ -174,7 +174,7 @@ def render_edu_map(data):
         get_elevation="edu",
         auto_highlight=True,
         get_fill_color=[210, 0, 100 ],  
-        elevation_scale=0.05,  # Adjusted for visibility
+        elevation_scale=1,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
         pickable=True,
