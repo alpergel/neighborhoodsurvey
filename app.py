@@ -56,8 +56,10 @@ def render_map(data):
         
         
     ))
-
-st.title("Local Income Per Capita Comparison")
+st.title("Guadalupe: A Rooted City of Hope and Migration")
+row1_1, row1_2, row1_2 = st.columns((2, 3))
+with row1_1:
+    st.title("Local Income Per Capita Comparison")
 # Main
 data = load_data()
 render_map(data)
