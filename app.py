@@ -31,7 +31,7 @@ def render_map(data):
         get_position="[lon, lat]",
         get_elevation="ipc",
         auto_highlight=True,
-        get_fill_color=[255,0, 0],  
+        get_fill_color=[125, 190, 216 ],  
         elevation_scale=0.05,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
