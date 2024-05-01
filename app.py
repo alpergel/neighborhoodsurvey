@@ -120,7 +120,7 @@ def render_ipc_map(data):
     ))
 def render_mob_map(data):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Upward Mobility %:</b> {mob}",
+        "html": "<b>Census Tract #:</b> {census_tract}<br><b>% Upward Mobility:</b> {mob}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
@@ -160,7 +160,7 @@ def render_mob_map(data):
     ))
 def render_edu_map(data):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {census_tract}<br><b>People with >= GED %:</b> {edu}",
+        "html": "<b>Census Tract #:</b> {census_tract}<br><b>% People With >= GED:</b> {edu}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
