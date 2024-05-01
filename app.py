@@ -134,7 +134,7 @@ def render_mob_map(data):
         get_elevation="mob",
         auto_highlight=True,
         get_fill_color=[0, 100, 250 ],  
-        elevation_scale=100,  # Adjusted for visibility
+        elevation_scale=200,  # Adjusted for visibility
         radius=200,  # Visible radius
         extruded=True,
         pickable=True,
