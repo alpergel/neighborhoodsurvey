@@ -29,8 +29,8 @@ def render_migration_map(data):
             "color": "white"
         }
     }
-    BLUE_RGB = [0, 0, 255, 40]
-    RED_RGB = [240, 50, 0, 40]
+    BLUE_RGB = [0, 0, 255, 100]
+    RED_RGB = [240, 50, 0, 100]
     arc_layer = pdk.Layer(
         "ArcLayer",
         data=data,
