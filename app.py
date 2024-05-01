@@ -32,7 +32,7 @@ def render_map(data):
         get_elevation="ipc",
         auto_highlight=True,
         get_fill_color=[255,0, 0],  
-        elevation_scale=0.25,  # Adjusted for visibility
+        elevation_scale=0.10,  # Adjusted for visibility
         radius=50,  # Visible radius
         extruded=True,
         pickable=True,
