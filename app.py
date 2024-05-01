@@ -12,7 +12,7 @@ def load_data():
         'lat': [33.36607, 33.370236, 33.369961, 33.354334],  # Check these coordinates
         'lon': [-111.96315, -111.971805, -111.953024, -111.95699],  # Check these coordinates
         'ipc': [26814, 55927, 40759, 37540],  # Simulated GDP values
-        'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
+        'census_tract': ['4013320002', '4013116738', '4013320007', '4013320001']
     })
     arcData = pd.DataFrame({
         'lng_h': [-109.9304, -109.9304, -109.9304, -109.9304, -109.9304],
@@ -68,7 +68,7 @@ def render_migration_map(data):
 
 def render_ipc_map(data):
     tooltip = {
-        "html": "<b>Census Tract:</b> {community_name}<br><b>Income Per Capita:</b> {ipc}",
+        "html": "<b>Census Tract #:</b> {community_name}<br><b>Income Per Capita:</b> {ipc}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
@@ -120,12 +120,15 @@ row1_1, row1_2, row1_3 = st.columns(3)
 with row1_1:
     st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
-    st.subheader("Census 2020")
+    st.subheader("Census 2022")
 with row1_2:
     st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
 with row1_3:
     st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
+st.divider()
+st.header("Map Page Sources")
+
 
 
