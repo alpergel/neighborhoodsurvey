@@ -33,7 +33,7 @@ def render_map(data):
         auto_highlight=True,
         get_fill_color=[255,0, 0],  
         elevation_scale=0.05,  # Adjusted for visibility
-        radius=150,  # Visible radius
+        radius=200,  # Visible radius
         extruded=True,
         pickable=True,
         
