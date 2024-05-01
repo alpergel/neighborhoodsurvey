@@ -114,6 +114,7 @@ st.subheader("After forcibly leaving the 8 established Yaqui Pueblos in the Rio 
 ipcData, arcData = load_data()
 render_migration_map(arcData)
 st.divider()
+st.header("Regional Socioeconomic Data")
 st.subheader("The rapid economic development of Phoenix around the Guadalupe community, and stagnant economical mobility within the community has led to a loss of quality of life for the community members, and desperate housing situations. Below are demographics of Guadalupe and its surrounding communities as comparison.")
 row1_1, row1_2, row1_3 = st.columns(3)
 with row1_1:
