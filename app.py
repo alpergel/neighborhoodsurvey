@@ -36,7 +36,7 @@ def render_map(data):
         auto_highlight=True,
         get_fill_color=["GDP/10 * 255", "(1 - GDP/10 ) * 255", 100],  # Coloring based on GDP
         elevation_scale=4,  # Adjusted for visibility
-        radius=2000,  # Visible radius
+        radius=50,  # Visible radius
         extruded=True,
         pickable=True,
         
@@ -46,7 +46,7 @@ def render_map(data):
     view_state = pdk.ViewState(
         latitude=data['lat'].mean(),
         longitude=data['lon'].mean(),
-        zoom=5,
+        zoom=100,
         pitch=50
     )
 
