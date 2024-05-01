@@ -11,7 +11,7 @@ def load_data():
     data = pd.DataFrame({
         'lat': [33.36607, 33.370236, 33.369961, 33.354334],  # Check these coordinates
         'lon': [-111.96315, -111.971805, -111.953024, -111.95699],  # Check these coordinates
-        'GDP': [26814, 55927, 40759, 37540],  # Simulated GDP values
+        'ipc': [26814, 55927, 40759, 37540],  # Simulated GDP values
         'community_name': ['Community A', 'Community B', 'Community C', 'Community D']
     })
     return data
@@ -24,18 +24,15 @@ def render_map(data):
             "color": "white"
         }
     }
-    
-    max_gdp = data['GDP'].max()
-    color_scale = [[x / max_gdp * 255, (1 - x / max_gdp) * 255, 100] for x in data['GDP']]
-    
+        
     layer = pdk.Layer(
         "ColumnLayer",
         data,
         get_position="[lon, lat]",
-        get_elevation="GDP",
+        get_elevation="ipc",
         auto_highlight=True,
-        get_fill_color=["GDP/10 * 255", "(1 - GDP/10 ) * 255", 100],  # Coloring based on GDP
-        elevation_scale=4,  # Adjusted for visibility
+        get_fill_color=[155,155, 100],  
+        elevation_scale=2,  # Adjusted for visibility
         radius=50,  # Visible radius
         extruded=True,
         pickable=True,
