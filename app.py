@@ -18,7 +18,7 @@ def load_data():
 
 def render_map(data):
     tooltip = {
-        "html": "<b>Community:</b> {community_name}<br><b>GDP:</b> {GDP}",
+        "html": "<b>Census Tract:</b> {community_name}<br><b>Income Per Capita:</b> {ipc}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
@@ -33,7 +33,7 @@ def render_map(data):
         auto_highlight=True,
         get_fill_color=[255,0, 0],  
         elevation_scale=0.05,  # Adjusted for visibility
-        radius=100,  # Visible radius
+        radius=150,  # Visible radius
         extruded=True,
         pickable=True,
         
