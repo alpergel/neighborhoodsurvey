@@ -52,7 +52,7 @@ def render_migration_map(data):
         longitude=meanLon,
         bearing=45,
         pitch=50,
-        zoom=3,
+        zoom=6,
     )
 
 
