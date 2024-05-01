@@ -49,7 +49,7 @@ def render_map(data):
 
     # Create the deck
     st.pydeck_chart(pdk.Deck(
-        map_style="mapbox://styles/mapbox/light-v9",
+        map_style="mapbox://styles/mapbox/dark-v9",
         layers=[layer],
         initial_view_state=view_state,
         tooltip=tooltip,
