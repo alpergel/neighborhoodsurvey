@@ -21,7 +21,13 @@ def load_data():
         "lat_w": [33.36607, 32.253460,33.255871, 33.8200, 33.576698],
         "com": ["Guadalupe, AZ","Tuscon, AZ","Thousand Palms, CA", "Borrego Springs, CA", "Lubbock, TX"]
     })
-    return ipcData, arcData
+    mobilityData = pd.DataFrame({
+        'lat': [33.36607, 33.370236, 33.369961, 33.354334],
+        'lon': [-111.96315, -111.971805, -111.953024, -111.95699],
+        'mob': ["2%","6%","9%","6%"],
+        'census_tract': ['4013320002', '4013116738', '4013320007', '4013320001'],
+    })
+    return ipcData, arcData, mobilityData
 def render_migration_map(data):
     tooltip = {
         "html": "<b>Yaqui Migration To:</b> {com}<br><b>",
@@ -68,7 +74,7 @@ def render_migration_map(data):
 
 def render_ipc_map(data):
     tooltip = {
-        "html": "<b>Census Tract #:</b> {community_name}<br><b>Income Per Capita:</b> {ipc}",
+        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Income Per Capita:</b> {ipc}",
         "style": {
             "backgroundColor": "steelblue",
             "color": "white"
@@ -106,12 +112,52 @@ def render_ipc_map(data):
         
         
     ))
+def render_mob_map(data):
+    tooltip = {
+        "html": "<b>Census Tract #:</b> {census_tract}<br><b>Upward Mobility From Very Low Income:</b> {mob}",
+        "style": {
+            "backgroundColor": "steelblue",
+            "color": "white"
+        }
+    }
+        
+    layer = pdk.Layer(
+        "ColumnLayer",
+        data,
+        get_position="[lon, lat]",
+        get_elevation="ipc",
+        auto_highlight=True,
+        get_fill_color=[0, 100, 250 ],  
+        elevation_scale=0.05,  # Adjusted for visibility
+        radius=200,  # Visible radius
+        extruded=True,
+        pickable=True,
+        
+    )
+
+    # Setup the initial view state for the map
+    view_state = pdk.ViewState(
+        latitude=data['lat'].mean(),
+        longitude=data['lon'].mean(),
+        zoom=10,
+        pitch=50
+    )
+
+    # Create the deck
+    st.pydeck_chart(pdk.Deck(
+        map_style="mapbox://styles/mapbox/dark-v9",
+        layers=[layer],
+        initial_view_state=view_state,
+        tooltip=tooltip,
+        
+        
+    ))
 st.title("Guadalupe: A Rooted City of Hope and Migration")
 st.subheader("Guadalupe, AZ was established by Yaqui Indians fleeing persecution and land dispossession under Mexican President Porfirio Díaz's policies in the late 19th and early 20th centuries. The community managed to preserve its unique cultural and geographical identity despite the pressures of urban expansion from neighboring Phoenix. Supported by missionaries and sympathetic locals, Guadalupe evolved into a vibrant enclave that retains its Yaqui heritage while also integrating Mexican-American influences.")
 st.divider()
 st.header("The Yaqui Migration")
 st.subheader("After forcibly leaving the 8 established Yaqui Pueblos in the Rio Yaqui Valley, the Yaqui immigrated to various regions in the US shown in the map below.")
-ipcData, arcData = load_data()
+ipcData, arcData, mobData = load_data()
 render_migration_map(arcData)
 st.divider()
 st.header("Regional Socioeconomic Data")
@@ -122,8 +168,8 @@ with row1_1:
     render_ipc_map(ipcData)
     st.subheader("Census 2022")
 with row1_2:
-    st.header("Local Income Per Capita Comparison")
-    render_ipc_map(ipcData)
+    st.header("Upward Mobility of Hispanic/Latino Citizens")
+    render_mob_map(mobData)
 with row1_3:
     st.header("Local Income Per Capita Comparison")
     render_ipc_map(ipcData)
