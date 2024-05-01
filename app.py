@@ -108,7 +108,7 @@ def render_ipc_map(data):
     ))
 st.title("Guadalupe: A Rooted City of Hope and Migration")
 st.subheader("Guadalupe, Arizona, was established by Yaqui Indians fleeing persecution and land dispossession under Mexican President Porfirio Díaz's policies in the late 19th and early 20th centuries. The community managed to preserve its unique cultural and geographical identity despite the pressures of urban expansion from neighboring Phoenix. Supported by missionaries and sympathetic locals, Guadalupe evolved into a vibrant enclave that retains its Yaqui heritage while also integrating Mexican-American influences.")
-st.divider()
+#st.divider()
 st.header("The Yaqui Migration")
 st.subheader("After forcibly leaving the 8 established Yaqui Pueblos in the Rio Yaqui Valley, the Yaqui immigrated to various regions in the US shown in the map below.")
 ipcData, arcData = load_data()
