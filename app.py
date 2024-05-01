@@ -3,7 +3,7 @@ import pydeck as pdk
 import streamlit as st
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="GDP Visualization", page_icon=":chart_with_upwards_trend:")
+st.set_page_config(layout="wide", page_title="Guadalupe Neighborhood Survey", page_icon=":cactus:")
 
 def load_data():
     # Simulate loading simple data
