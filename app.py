@@ -227,13 +227,13 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant
 with tab1:
     st.image('church.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab2:
-    st.image('delyaqui.png', caption='Sourced From: Google Maps Images')
+    st.image('delyaqui.png', width=720, caption='Sourced From: Google Maps Images')
 with tab3:
-    st.image('mercado.jpg', caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
+    st.image('mercado.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab4:
-    st.image('azgrand.png', caption='Sourced From: Arizona Grand Resort & Spa Promotional Imaging')
+    st.image('azgrand.png', width=720, caption='Sourced From: Arizona Grand Resort & Spa Promotional Imaging')
 with tab5:
-    st.image('cemetary.jpg', caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
+    st.image('cemetary.jpg', width=720, caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
 st.divider()
 st.header("Map Page Sources")
 
