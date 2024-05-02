@@ -222,16 +222,18 @@ with row1_3:
     render_edu_map(eduData)
     st.subheader("Census 2022; Policy Map")
 st.divider()
-st.header("Guadalupe")
-tab1, tab2, tab3, tab4 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort"])
+st.header("Guadalupe: In Color")
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort"])
 with tab1:
-    st.image('church.jpg', caption='Sunrise by the mountains')
+    st.image('church.jpg', caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab2:
-    st.image('delyaqui.png', caption='Sunrise by the mountains')
+    st.image('delyaqui.png', caption='Sourced From: Google Maps Images')
 with tab3:
-    st.image('mercado.jpg', caption='Sunrise by the mountains')
+    st.image('mercado.jpg', caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab4:
-    st.image('azgrand.png', caption='Sunrise by the mountains')
+    st.image('azgrand.png', caption='Sourced From: Arizona Grand Resort & Spa Promotional Imaging')
+with tab5:
+    st.image('cemetary.jpg', caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
 st.divider()
 st.header("Map Page Sources")
 
