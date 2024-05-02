@@ -222,6 +222,17 @@ with row1_3:
     render_edu_map(eduData)
     st.subheader("Census 2022; Policy Map")
 st.divider()
+st.header("Guadalupe")
+tab1, tab2, tab3, tab4 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort"])
+with tab1:
+    st.image('church.jpg', caption='Sunrise by the mountains')
+with tab2:
+    st.image('delyaqui.png', caption='Sunrise by the mountains')
+with tab3:
+    st.image('mercado.jpg', caption='Sunrise by the mountains')
+with tab4:
+    st.image('azgrand.png', caption='Sunrise by the mountains')
+st.divider()
 st.header("Map Page Sources")
 
 
