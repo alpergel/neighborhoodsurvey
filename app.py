@@ -214,7 +214,7 @@ with row1_1:
     render_ipc_map(ipcData)
     st.subheader("Census 2022; Policy Map")
 with row1_2:
-    st.header("Upward Economic Mobility")
+    st.header("Hispanic Upward Economic Mobility")
     render_mob_map(mobData)
     st.subheader("Census 2010; Policy Map")
 with row1_3:
