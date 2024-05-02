@@ -223,7 +223,7 @@ with row1_3:
     st.subheader("Census 2022; Policy Map")
 st.divider()
 st.header("Guadalupe: In Color")
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
 with tab1:
     st.image('church.jpg', caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab2:
