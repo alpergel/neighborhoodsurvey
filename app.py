@@ -230,10 +230,14 @@ with tab2:
     st.image('delyaqui.png', width=720, caption='Sourced From: Google Maps Images')
 with tab3:
     st.image('mercado.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
+    st.subheader('The AZ Grand Resort is an extremely commonly visited luxory resort nestled between the chaos of Downtown Phoenix, and right across from the town of Guadalupe. The splendor and luxory of the resort directly contrasts with the squalor and housing crises being experienced in the town of Guadalupe, highlighting the inequality. ')
+
 with tab4:
     st.image('azgrand.png', width=720, caption='Sourced From: Arizona Grand Resort & Spa Promotional Imaging')
+    st.subheader('The AZ Grand Resort is an extremely commonly visited luxory resort nestled between the chaos of Downtown Phoenix, and right across from the town of Guadalupe. The splendor and luxory of the resort directly contrasts with the squalor and housing crises being experienced in the town of Guadalupe, highlighting the inequality. ')
 with tab5:
     st.image('cemetary.jpg', width=720, caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
+    st.subheader('The Guadalupe Cemetary, one of the best and long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
 st.divider()
 st.header("Map Page Sources")
 
