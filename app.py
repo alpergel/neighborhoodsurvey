@@ -202,7 +202,7 @@ st.title("Guadalupe: A Rooted City of Hope and Migration")
 st.subheader("Guadalupe, AZ was established by Yaqui Indians fleeing persecution and land dispossession under Mexican President Porfirio Díaz's policies in the late 19th and early 20th centuries. The community managed to preserve its unique cultural and geographical identity despite the pressures of urban expansion from neighboring Phoenix. Supported by missionaries and sympathetic locals, Guadalupe evolved into a vibrant enclave that retains its Yaqui heritage while also integrating Mexican-American influences.")
 st.divider()
 st.header("The Yaqui Migration")
-st.subheader("After forcibly leaving the 8 established Yaqui Pueblos in the Rio Yaqui Valley, the Yaqui immigrated to various regions in the US shown in the map below.")
+st.subheader("Upon the Spaniards first contact with the Yaqui in 1533, the Yaqui occupied a 2500km2 territory in the Rio Yaqui valley. Within 200 years, as a result of Spanish settler colonial pressures, this range was reduced to 8 pueblos around the Yaqui River, accompanied by a radical transformation towards the Yaqui culture that can be observed today. The contemporary concept of the Yaqui community was evolved through continual prosperity with the Jesuit missions of the Spaniards. What transpired was an exemplar of Ortiz’s notion of transculturism, where Yaqui culture fused with Jesuit teachings to form a niche-synthesized religion. The eight established Yaqui Pueblos as a result of this new identity, and provided a backdrop for a Yaqui move towards economic, political, and religious autonomy. During the early 20th century, the Mexican Dictatorships policies of extermination and deportation led to the Yaqui diaspora to the 5 primary locations shown below:")
 ipcData, arcData, mobData, eduData = load_data()
 render_migration_map(arcData)
 st.divider()
@@ -238,7 +238,7 @@ with tab4:
     st.subheader('The AZ Grand Resort is an extremely commonly visited luxory resort nestled between the chaos of Downtown Phoenix, and right across from the town of Guadalupe. The splendor and luxory of the resort directly contrasts with the squalor and housing crises being experienced in the town of Guadalupe, highlighting the inequality. ')
 with tab5:
     st.image('cemetary.jpg', width=720, caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
-    st.subheader('The Guadalupe Cemetary, one of the best and long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
+    st.subheader('The Guadalupe Cemetary, one of the long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
 st.divider()
 st.header("Map Page Sources")
 
