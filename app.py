@@ -207,7 +207,8 @@ ipcData, arcData, mobData, eduData = load_data()
 render_migration_map(arcData)
 st.divider()
 st.header("Regional Socioeconomic Data")
-st.subheader("The rapid economic development of Phoenix around the Guadalupe community, and stagnant economical mobility within the community has led to a loss of quality of life for the community members, and desperate housing situations. Below are demographics of Guadalupe and its surrounding communities as comparison.")
+
+st.subheader("The current location of Guadalupe, accompanied by its current problems stems from the relocation of the settlement's original founding. Due to the second-class treatment of native americans, including the Yaquis, after a water dispute during the creation of the Salt Lake River Project, the Yaquis were forced off their original land, and put on a ‘waterlogged’ and ‘undesirable’ tract of land that the Federal government approved for the creation of the Town of Guadalupe on. This nature of the land led to the loss of Yaqui traditional livelihood of agriculture, and consequently forced many Guadalupe residents to be exploited in the construction of the underlying canal and irrigation systems crucial to Phoenix’s current size. Yaqui were not only seen as expendable workers, this treatment continued throughout the entirety of the 20th century, culminating with the Bracero program that brought more remaining Yaqui’s from Sonora, MX to the Arizona community. Further, the Yaqui became entirely dependent on the Anglo economy surrounding them, leading to severe poverty when Anglo interactions or opportunities declined. These socioeconomic inequalities and issues have been further propagated, leading to the disparate state of Guadalupe from its adjacent communities in a multitude of ways, as can be seen in the maps below:")
 row1_1, row1_2, row1_3 = st.columns(3)
 with row1_1:
     st.header("Local Income Per Capita Comparison")
@@ -218,7 +219,7 @@ with row1_2:
     render_mob_map(mobData)
     st.subheader("Census 2010; Policy Map")
 with row1_3:
-    st.header("Local Income Per Capita Comparison")
+    st.header("Hispanic Educational Acquisiton GED+")
     render_edu_map(eduData)
     st.subheader("Census 2022; Policy Map")
 st.divider()
