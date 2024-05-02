@@ -225,7 +225,7 @@ st.divider()
 st.header("Guadalupe: In Color")
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
 with tab1:
-    st.image('church.jpg', width='720', caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
+    st.image('church.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
 with tab2:
     st.image('delyaqui.png', caption='Sourced From: Google Maps Images')
 with tab3:
