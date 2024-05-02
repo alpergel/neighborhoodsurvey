@@ -223,10 +223,10 @@ with row1_3:
     st.subheader("Census 2022; Policy Map")
 st.divider()
 st.header("Guadalupe: In Color")
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaqui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
 with tab1:
     st.image('church.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
-    st.subheader('The primary attraction and religious center of the town is the Our Lady of Guadalupe Church. The Church, which is made up of two nearly identical buildings, offers services in English & Spanish within one church, and Yaqui in the other. In front of the churches lies a vacant lot of stagnant dust that makes up a significant percentage of the towns small territory. During Lent, the Yaqui community perform the traditional "deer dance" on this lot, which invites any and all to watch, but prohibits photography. ')
+    st.text('The primary attraction and religious center of the town is the Our Lady of Guadalupe Church. The Church, which is made up of two nearly identical buildings, offers services in English & Spanish within one church, and Yaqui in the other. In front of the churches lies a vacant lot of stagnant dust that makes up a significant percentage of the towns small territory. During Lent, the Yaqui community perform the traditional "deer dance" on this lot, which invites any and all to watch, but prohibits photography. ')
 with tab2:
     st.image('delyaqui.png', width=720, caption='Sourced From: Google Maps Images')
     st.subheader('Del Yaqui, a colorful restaurant located near the Guadalupe Mercado is one of the only restaurants in Arizona focusing on Yaqui/Mexican cuisine. ')
