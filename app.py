@@ -224,6 +224,7 @@ with row1_3:
     st.subheader("Census 2022; Policy Map")
 st.divider()
 st.header("Guadalupe: In Color")
+st.subheader("Throughout the entirety of this course, we have learned that there are multiple ways to represent a community. From my past experiences in Guadalupe and my research of the roots of the community, the images and locations depicted below offer a more 'comprehensive' view of the community and its colorful/vibrant nature that many Phoenicians are not aware of. However, as a continuation of the previous section, I hope to provide a visual contrast between Guadalupe and one of its surrounding landmarks.")
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaqui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
 with tab1:
     st.image('church.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
