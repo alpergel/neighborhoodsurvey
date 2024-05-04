@@ -225,7 +225,7 @@ with row1_3:
 st.divider()
 st.header("Guadalupe: In Color")
 st.subheader("Throughout the entirety of this course, we have learned that there are multiple ways to represent a community. From my past experiences in Guadalupe and my research of the roots of the community, the images and locations depicted below offer a more 'comprehensive' view of the community and its colorful/vibrant nature that many Phoenicians are not aware of. However, as a continuation of the previous section, I hope to provide a visual contrast between Guadalupe and one of its surrounding landmarks.")
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Religious Center", "Del Yaqui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe Cemetary"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Religious Center", "Del Yaqui Restaurant", "Mercado de Guadalupe", "AZ Grand Resort", "Guadalupe House", "Guadalupe Cemetary"])
 with tab1:
     st.image('church.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
     st.subheader('The primary attraction and religious center of the town is the Our Lady of Guadalupe Church. The Church, which is made up of two nearly identical buildings, offers services in English & Spanish within one church, and Yaqui in the other. In front of the churches lies a vacant lot of stagnant dust that makes up a significant percentage of the towns small territory. During Lent, the Yaqui community perform the traditional "deer dance" on this lot, which invites any and all to watch, but prohibits photography. ')
@@ -239,6 +239,9 @@ with tab4:
     st.image('azgrand.png', width=720, caption='Sourced From: Arizona Grand Resort & Spa Promotional Imaging')
     st.subheader('The AZ Grand Resort is an extremely commonly visited luxory resort nestled between the chaos of Downtown Phoenix, and right across from the town of Guadalupe. The splendor and luxory of the resort directly contrasts with the squalor and housing crises being experienced in the town of Guadalupe, highlighting the inequality. ')
 with tab5:
+    st.image('house.jpg', width=720, caption='Sourced From: https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/')
+    st.subheader('A common sight in Guadalupe, many of the houses and streets are unfortunately in a dilapidated state due to the minimal funding that Guadalupe receives from Maricopa County. Further, due to Guadalupes ideal location in metro Phoenix, the land costs are increasing, but an inability to afford the cost of living is pushing Yaqui-descendent residents out. Thankfully, with Federal programs like the American Rescue Plan Act, new funds are being appropriated for the community to build affordable housing.')
+with tab6:
     st.image('cemetary.jpg', width=720, caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
     st.subheader('The Guadalupe Cemetary, one of the long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
 st.divider()
