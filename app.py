@@ -253,6 +253,7 @@ st.markdown(
 - https://media.kjzz.org/s3fs-public/Glaser%20MA%20Thesis%20%281%29%2020200213.pdf 
 - https://www.newworldencyclopedia.org/entry/Yaqui 
 - https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/
+- https://www.yaquisocal.org/history#:~:text=Some%20Yaquis%20chose%20to%20relocate,the%20Gold%20Rush%20was%20abundant. 
 """
 )
 
