@@ -246,6 +246,15 @@ with tab6:
     st.subheader('The Guadalupe Cemetary, one of the long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
 st.divider()
 st.header("Map Page Sources")
+st.markdown(
+"""
+- https://www.azfamily.com/2024/03/06/23-million-federal-funds-be-used-address-affordable-housing-crisis-guadalupe/
+- https://kjzz.org/content/1425241/untold-arizona-history-and-future-people-guadalupe
+- https://media.kjzz.org/s3fs-public/Glaser%20MA%20Thesis%20%281%29%2020200213.pdf 
+- https://www.newworldencyclopedia.org/entry/Yaqui 
+- https://outpostmagazine.com/guadalupe-arizona-a-forgotten-town-phoenix/
+"""
+)
 
 
-
+#https://www.azfamily.com/2024/03/06/23-million-federal-funds-be-used-address-affordable-housing-crisis-guadalupe/
