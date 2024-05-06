@@ -256,6 +256,17 @@ st.markdown(
 - https://www.yaquisocal.org/history#:~:text=Some%20Yaquis%20chose%20to%20relocate,the%20Gold%20Rush%20was%20abundant. 
 """
 )
+st.divider()
+st.header("Alper Gel Narrative Piece")
+with open("paper.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
+st.download_button(
+    label="Download Narrative PDF",
+    data=PDFbyte,
+    file_name="alper_narrative.pdf",
+    mime="application/octet-stream",
+)
+
 
 
 #https://www.azfamily.com/2024/03/06/23-million-federal-funds-be-used-address-affordable-housing-crisis-guadalupe/
