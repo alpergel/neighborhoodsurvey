@@ -245,7 +245,7 @@ with tab6:
     st.image('cemetary.jpg', width=720, caption='Sourced From: https://www.atlasobscura.com/places/guadalupe-cemetery')
     st.subheader('The Guadalupe Cemetary, one of the long-standing marks of the Yaqui Indian diaspora to the Phoenix, AZ region dates back to 1904. Due to land and water disputes with other Arizonan cities, the Yaqui settlement relocated to current day Guadalupe.')
 st.divider()
-st.header("Map Page Sources")
+st.header("Page Sources")
 st.markdown(
 """
 - https://www.azfamily.com/2024/03/06/23-million-federal-funds-be-used-address-affordable-housing-crisis-guadalupe/
